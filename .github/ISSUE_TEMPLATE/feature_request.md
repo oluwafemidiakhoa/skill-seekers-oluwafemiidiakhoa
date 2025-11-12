@@ -1,39 +1,48 @@
 ---
 name: Feature Request
-about: Suggest a new feature for Skill Seekers
+about: Suggest an idea for Skill Seekers
 title: '[FEATURE] '
-labels: 'type: feature'
+labels: enhancement
 assignees: ''
 ---
 
-## 🚀 Feature Description
-
+## Feature Description
 A clear and concise description of the feature you'd like to see.
 
-## 💡 Use Case
+## Problem Statement
+What problem does this feature solve? Is your feature request related to a problem? Please describe.
 
-Describe the problem this feature would solve. What is the user trying to accomplish?
+Example: "I'm always frustrated when..."
 
-## 📋 Proposed Solution
+## Proposed Solution
+A clear and concise description of what you want to happen.
 
-Describe how you envision this feature working.
+## Alternative Solutions
+Have you considered any alternative solutions or features? Describe them here.
 
-## 🔄 Alternatives Considered
+## Use Case
+Describe a specific scenario where this feature would be useful:
 
-Have you considered any alternative solutions or workarounds?
+1. As a [type of user]
+2. I want to [do something]
+3. So that [benefit/outcome]
 
-## 📊 Expected Impact
+## Expected Impact
+- **Users Affected**: [Who would benefit from this feature?]
+- **Frequency**: [How often would this feature be used?]
+- **Priority**: [Low/Medium/High - How important is this to you?]
 
-- **Priority:** Low / Medium / High / Critical
-- **Effort:** XS / S / M / L / XL
-- **Users Affected:** Describe who would benefit
+## Implementation Ideas (optional)
+If you have ideas on how to implement this, please share:
+- Technical approach
+- Files that might need changes
+- Potential challenges
 
-## 📝 Additional Context
+## Additional Context
+Add any other context, screenshots, mockups, or examples about the feature request here.
 
-Add any other context, screenshots, or examples about the feature request.
+## Related Features
+Are there any existing features or issues related to this? Link them here.
 
-## ✅ Acceptance Criteria
-
-- [ ] Criteria 1
-- [ ] Criteria 2
-- [ ] Criteria 3
+## Innovation Alignment
+Does this align with features in [INNOVATION_STRATEGY.md](../../INNOVATION_STRATEGY.md)? If so, which one?

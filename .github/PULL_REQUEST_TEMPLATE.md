@@ -1,27 +1,49 @@
 # Pull Request
 
-## 📋 Description
+## Description
+<!-- Provide a clear and concise description of your changes -->
 
-Brief description of changes made.
+## Type of Change
+<!-- Check all that apply -->
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Documentation update
+- [ ] Code refactoring
+- [ ] Performance improvement
+- [ ] Test coverage improvement
 
-## 🔗 Related Issues
+## Related Issues
+<!-- Link to related issues using #issue_number -->
+Closes #
+Related to #
 
-Closes #(issue number)
-Relates to #(issue number)
+## Changes Made
+<!-- List the specific changes you made -->
+-
+-
+-
 
-## 🎯 Type of Change
+## Testing
+<!-- Describe the tests you ran and how to reproduce them -->
 
-- [ ] 🐛 Bug fix (non-breaking change which fixes an issue)
-- [ ] ✨ New feature (non-breaking change which adds functionality)
-- [ ] 💥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] 📚 Documentation update
-- [ ] ♻️ Code refactoring
-- [ ] ⚡ Performance improvement
-- [ ] 🧪 Test update
+**Test Configuration**:
+- Python version:
+- OS:
+- Installation method:
 
-## ✅ Checklist
+**Test Results**:
+```bash
+# Command you ran
+pytest tests/
 
-- [ ] My code follows the style guidelines of this project
+# Results
+...
+```
+
+## Checklist
+<!-- Check all that apply -->
+- [ ] My code follows the project's code style (black, ruff)
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
@@ -30,19 +52,24 @@ Relates to #(issue number)
 - [ ] New and existing unit tests pass locally with my changes
 - [ ] Any dependent changes have been merged and published
 
-## 🧪 Testing
+## Screenshots (if applicable)
+<!-- Add screenshots to help explain your changes -->
 
-Describe the tests you ran to verify your changes.
+## Performance Impact
+<!-- If applicable, describe any performance implications -->
+- [ ] No performance impact
+- [ ] Performance improved by:
+- [ ] Performance degraded by: (with justification)
 
-**Test Configuration:**
-- Python version:
-- OS:
-- Dependencies installed:
+## Breaking Changes
+<!-- If this is a breaking change, describe the migration path -->
 
-## 📸 Screenshots (if applicable)
+## Additional Notes
+<!-- Any additional information reviewers should know -->
 
-Add screenshots to demonstrate visual changes.
+## Attribution
+<!-- If you used code from elsewhere, attribute it here -->
 
-## 📝 Additional Notes
+---
 
-Any additional information reviewers should know.
+**Thanks for contributing to Skill Seekers!** 🚀

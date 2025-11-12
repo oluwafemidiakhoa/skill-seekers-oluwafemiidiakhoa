@@ -1,52 +1,47 @@
 ---
 name: Bug Report
-about: Report a bug or issue with Skill Seekers
+about: Report a bug to help us improve Skill Seekers
 title: '[BUG] '
-labels: 'type: bug'
+labels: bug
 assignees: ''
 ---
 
-## 🐛 Bug Description
-
+## Bug Description
 A clear and concise description of what the bug is.
 
-## 🔄 Steps to Reproduce
-
-1. Go to '...'
-2. Run command '...'
+## To Reproduce
+Steps to reproduce the behavior:
+1. Run command '...'
+2. With config '...'
 3. See error
 
-## ✅ Expected Behavior
+## Expected Behavior
+A clear and concise description of what you expected to happen.
 
-What you expected to happen.
-
-## ❌ Actual Behavior
-
+## Actual Behavior
 What actually happened.
 
-## 📋 Environment
+## Environment
+- **OS**: [e.g. Ubuntu 22.04, macOS 13, Windows 11]
+- **Python Version**: [e.g. 3.10, 3.11, 3.12]
+- **Skill Seekers Version**: [e.g. 1.0.0]
+- **Installation Method**: [PyPI, source, uv]
 
-- **OS:** [e.g., macOS 14.0, Ubuntu 22.04, Windows 11]
-- **Python Version:** [e.g., 3.10, 3.11]
-- **Skill Seekers Version:** [e.g., v1.0.0]
-- **Installation Method:** [pip, git clone, etc.]
-
-## 📊 Error Output
-
+## Configuration File (if applicable)
+```json
+{
+  "name": "...",
+  "base_url": "..."
+}
 ```
-Paste the full error message or traceback here
+
+## Error Output
+```
+Paste the full error message and traceback here
 ```
 
-## 📸 Screenshots
+## Additional Context
+Add any other context about the problem here (screenshots, logs, etc.).
 
-If applicable, add screenshots to help explain the problem.
-
-## 🔍 Additional Context
-
-- Config file used (if applicable)
-- Documentation URL being scraped
-- Any custom modifications made
-
-## 🎯 Possible Solution
-
-If you have an idea of how to fix this, please share!
+## Possible Solution (optional)
+If you have ideas on how to fix this, please share.
