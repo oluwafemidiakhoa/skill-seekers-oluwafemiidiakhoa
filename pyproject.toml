@@ -3,14 +3,17 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "skill-seekers"
-version = "2.0.0"
-description = "Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills"
+name = "skill-seekers-oluwafemidiakhoa"
+version = "1.0.0"
+description = "Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills (Fork by Oluwafemi Idiakhoa)"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
-    {name = "Yusuf Karaaslan"}
+    {name = "Oluwafemi Idiakhoa", email = "oluwafemidiakhoa@gmail.com"}
+]
+maintainers = [
+    {name = "Oluwafemi Idiakhoa", email = "oluwafemidiakhoa@gmail.com"}
 ]
 keywords = [
     "claude",
@@ -88,11 +91,12 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yusufkaraaslan/Skill_Seekers"
-Repository = "https://github.com/yusufkaraaslan/Skill_Seekers"
-"Bug Tracker" = "https://github.com/yusufkaraaslan/Skill_Seekers/issues"
-Documentation = "https://github.com/yusufkaraaslan/Skill_Seekers#readme"
+Homepage = "https://github.com/oluwafemidiakhoa/Skill_Seekers"
+Repository = "https://github.com/oluwafemidiakhoa/Skill_Seekers"
+"Bug Tracker" = "https://github.com/oluwafemidiakhoa/Skill_Seekers/issues"
+Documentation = "https://github.com/oluwafemidiakhoa/Skill_Seekers#readme"
 
+"Original Project" = "https://github.com/yusufkaraaslan/Skill_Seekers"
 [project.scripts]
 # Main unified CLI
 skill-seekers = "skill_seekers.cli.main:main"

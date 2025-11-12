@@ -271,8 +271,8 @@ We aim for predictable releases:
 - 📋 **Project Board**: https://github.com/users/yusufkaraaslan/projects/2
 - 📚 **Full Roadmap**: [FLEXIBLE_ROADMAP.md](FLEXIBLE_ROADMAP.md)
 - 📝 **Changelog**: [CHANGELOG.md](CHANGELOG.md)
-- 💬 **Discussions**: https://github.com/yusufkaraaslan/Skill_Seekers/discussions
-- 🐛 **Issues**: https://github.com/yusufkaraaslan/Skill_Seekers/issues
+- 💬 **Discussions**: https://github.com/oluwafemidiakhoa/Skill_Seekers/discussions
+- 🐛 **Issues**: https://github.com/oluwafemidiakhoa/Skill_Seekers/issues
 
 ---
 
@@ -281,7 +281,7 @@ We aim for predictable releases:
 Have questions about the roadmap or want to suggest a feature?
 
 1. Check if it's already in our [FLEXIBLE_ROADMAP.md](FLEXIBLE_ROADMAP.md)
-2. Search [existing discussions](https://github.com/yusufkaraaslan/Skill_Seekers/discussions)
+2. Search [existing discussions](https://github.com/oluwafemidiakhoa/Skill_Seekers/discussions)
 3. Open a new discussion or issue
 4. Reach out in our community channels
 

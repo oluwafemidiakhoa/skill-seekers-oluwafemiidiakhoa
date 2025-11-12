@@ -98,7 +98,7 @@ skill-seekers --help
 ### Option 2: Install from Source (For Development)
 ```bash
 # Clone the repository
-git clone https://github.com/yusufkaraaslan/Skill_Seekers.git
+git clone https://github.com/oluwafemidiakhoa/Skill_Seekers.git
 cd Skill_Seekers
 
 # Create virtual environment
@@ -782,6 +782,136 @@ The correct command uses the local `cli/package_skill.py` in the repository root
 - **[TODO.md](TODO.md)** - Current focus
 - **[STRUCTURE.md](STRUCTURE.md)** - Repository structure
 
+## Development Commands
+
+### Running Tests
+
+```bash
+# Run all tests (379 tests, ~30-60 seconds)
+pytest tests/
+
+# Run specific test file
+pytest tests/test_scraper_features.py
+
+# Run single test function
+pytest tests/test_scraper_features.py::test_is_valid_url
+
+# Run with verbose output
+pytest tests/ -v
+
+# Run with coverage report
+pytest tests/ --cov=src/skill_seekers --cov-report=html
+# Coverage report: htmlcov/index.html
+
+# Run only MCP tests
+pytest tests/test_mcp_server.py
+
+# Run only unified scraping tests (12 tests currently failing)
+pytest tests/test_unified.py
+
+# Run tests in parallel (faster)
+pytest tests/ -n auto
+```
+
+### Development Workflow
+
+```bash
+# 1. Install in editable mode (one-time setup)
+pip install -e .
+
+# 2. Make code changes to src/skill_seekers/...
+
+# 3. Run tests to verify
+pytest tests/
+
+# 4. Test CLI commands immediately (editable install makes changes live)
+skill-seekers scrape --config configs/react.json --dry-run
+
+# 5. Run specific tests related to your changes
+pytest tests/test_scraper_features.py -v
+
+# 6. Before committing, run full test suite
+pytest tests/
+```
+
+### Package Build & Publish (Maintainers Only)
+
+```bash
+# 1. Update version in pyproject.toml and src/skill_seekers/cli/main.py
+
+# 2. Build package
+uv build
+# OR: python -m build
+
+# Creates: dist/skill_seekers-2.0.0-py3-none-any.whl
+#          dist/skill-seekers-2.0.0.tar.gz
+
+# 3. Test locally before publishing
+pip install dist/skill_seekers-2.0.0-py3-none-any.whl
+
+# 4. Publish to PyPI (requires PyPI token)
+uv publish
+# OR: python -m twine upload dist/*
+
+# 5. Verify on PyPI
+pip install skill-seekers --upgrade
+```
+
+### Debugging Tips
+
+```bash
+# Run with Python debugger
+python -m pdb src/skill_seekers/cli/doc_scraper.py --config configs/react.json
+
+# Add breakpoints in code:
+# import pdb; pdb.set_trace()
+
+# Check package installation
+pip show skill-seekers
+
+# Verify entry points are working
+which skill-seekers
+skill-seekers --version
+
+# Test MCP server locally
+python -m skill_seekers.mcp.server
+```
+
+## Known Issues & Current Priorities
+
+### ⚠️ Priority 1: Failing Unified Tests (12 tests)
+**File:** `tests/test_unified.py`
+**Status:** 12 tests failing
+**Issues:**
+- ConfigValidator expecting dict instead of file path
+- ConflictDetector expecting dict pages, not list
+
+**Fix Required:**
+```python
+# In src/skill_seekers/cli/unified_scraper.py
+# Need to update ConfigValidator calls to pass dict, not file path
+# Need to ensure ConflictDetector receives dict pages, not list
+```
+
+**How to work on this:**
+```bash
+# Run only unified tests
+pytest tests/test_unified.py -v
+
+# See specific failures
+pytest tests/test_unified.py -v --tb=short
+
+# Fix and re-test incrementally
+pytest tests/test_unified.py::test_specific_failing_test -v
+```
+
+### Future Priorities
+1. **Task H1.3**: Create example project folder
+2. **Task A3.1**: GitHub Pages site (skillseekersweb.com)
+3. **Task J1.1**: Install MCP package for testing
+
+See [FLEXIBLE_ROADMAP.md](FLEXIBLE_ROADMAP.md) for complete task list (134 tasks).
+
 ## Notes for Claude Code
 
 **Project Status (v2.0.0):**
@@ -789,7 +919,7 @@ The correct command uses the local `cli/package_skill.py` in the repository root
 - ✅ **Modern Python Packaging**: pyproject.toml, src/ layout, entry points
 - ✅ **Unified CLI**: Single `skill-seekers` command with Git-style subcommands
 - ✅ **CI/CD Working**: All 5 test matrix jobs passing (Ubuntu + macOS, Python 3.10-3.12)
-- ✅ **Test Coverage**: 379 tests passing, 39% coverage
+- ✅ **Test Coverage**: 379 tests passing, 39% coverage (12 unified tests failing)
 - ✅ **Documentation**: Complete user and technical documentation
 
 **Architecture:**
@@ -799,14 +929,22 @@ The correct command uses the local `cli/package_skill.py` in the repository root
 - **Modern packaging**: PEP 621 compliant with proper dependency management
 - **MCP Integration**: 9 tools for Claude Code Max integration
 
+**Critical Files:**
+- **Entry point**: `src/skill_seekers/cli/main.py` (unified CLI)
+- **Tests**: `tests/` directory (148 collected tests, 17 errors to fix)
+- **Configs**: `configs/*.json` (24 total configs)
+- **Package config**: `pyproject.toml` (dependencies, entry points, metadata)
+
 **Development Workflow:**
 1. **Install**: `pip install -e .` (editable mode for development)
-2. **Run tests**: `pytest tests/` (379 tests)
-3. **Build package**: `uv build` or `python -m build`
-4. **Publish**: `uv publish` (PyPI)
+2. **Run tests**: `pytest tests/` (379 tests passing)
+3. **Test changes**: `skill-seekers <command>` (uses installed package)
+4. **Build package**: `uv build` or `python -m build`
+5. **Publish**: `uv publish` (PyPI, maintainers only)
 
 **Key Points:**
 - Output is cached and reusable in `output/` (git-ignored)
 - Enhancement is optional but highly recommended
-- All 24 configs are working and tested
+- 24 configs available (14 single-source, 5 unified, 5 test configs)
 - CI workflow requires `pip install -e .` to install package before running tests
+- Always run `pytest tests/` before committing to verify no regressions
