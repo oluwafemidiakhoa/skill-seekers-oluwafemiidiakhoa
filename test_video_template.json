@@ -1,0 +1,18 @@
+{
+  "name": "",
+  "description": "",
+  "source_type": "video",
+  "template": "tutorial_series",
+  "source_config": {
+    "video_urls": [],
+    "extract_transcripts": true,
+    "extract_chapters": true,
+    "language": "en"
+  },
+  "processing_options": {
+    "max_content_items": 1000,
+    "quality_threshold": 0.3,
+    "enable_ai_enhancement": true,
+    "auto_categorization": true
+  }
+}

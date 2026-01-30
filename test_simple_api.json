@@ -1,0 +1,29 @@
+{
+  "name": "simple_api_test",
+  "description": "Simple API test for validation",
+  "source_type": "api",
+  "template": "api_reference",
+  "source_config": {
+    "base_url": "https://httpbin.org",
+    "auth": {
+      "type": "none"
+    },
+    "endpoints": [
+      {
+        "path": "/get",
+        "method": "get",
+        "description": "Simple GET request test",
+        "parameters": [],
+        "responses": {
+          "200": {"description": "Success"}
+        }
+      }
+    ]
+  },
+  "processing_options": {
+    "max_content_items": 10,
+    "quality_threshold": 0.1,
+    "enable_ai_enhancement": false,
+    "auto_categorization": true
+  }
+}

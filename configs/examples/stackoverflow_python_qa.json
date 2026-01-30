@@ -1,0 +1,52 @@
+{
+  "name": "python_qa_troubleshooting",
+  "description": "Python troubleshooting guide from Stack Overflow Q&A. Use when debugging Python code, solving common errors, and finding best practices.",
+  "source_type": "forum",
+  "template": "troubleshooting",
+  "source_config": {
+    "platform": "stackoverflow",
+    "search_queries": [
+      "python error",
+      "python exception",
+      "python debugging",
+      "python best practices",
+      "python performance",
+      "python pandas",
+      "python numpy",
+      "python flask",
+      "python django",
+      "python asyncio"
+    ],
+    "max_questions": 500,
+    "min_score": 5,
+    "include_answers": true,
+    "min_answer_score": 3,
+    "tags": ["python", "python-3.x"],
+    "filter_criteria": {
+      "has_accepted_answer": true,
+      "min_views": 1000,
+      "answer_count": {
+        "min": 1,
+        "max": 20
+      }
+    },
+    "content_categories": {
+      "syntax_errors": ["syntaxerror", "indentation", "invalid syntax"],
+      "import_errors": ["modulenotfounderror", "importerror", "no module named"],
+      "type_errors": ["typeerror", "attributeerror", "nameerror"],
+      "performance": ["slow", "optimization", "memory", "speed"],
+      "libraries": ["pandas", "numpy", "requests", "matplotlib", "django", "flask"],
+      "async": ["asyncio", "async", "await", "coroutine"],
+      "data_structures": ["list", "dict", "set", "tuple", "dataframe"]
+    }
+  },
+  "processing_options": {
+    "max_content_items": 500,
+    "quality_threshold": 0.6,
+    "enable_ai_enhancement": true,
+    "auto_categorization": true,
+    "group_similar_problems": true,
+    "extract_code_solutions": true,
+    "rank_by_community_score": true
+  }
+}

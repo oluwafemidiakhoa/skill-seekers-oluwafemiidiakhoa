@@ -1,0 +1,19 @@
+{
+  "name": "",
+  "description": "",
+  "source_type": "forum",
+  "template": "troubleshooting",
+  "source_config": {
+    "platform": "stackoverflow",
+    "search_queries": [],
+    "max_questions": 100,
+    "min_score": 1,
+    "include_answers": true
+  },
+  "processing_options": {
+    "max_content_items": 1000,
+    "quality_threshold": 0.3,
+    "enable_ai_enhancement": true,
+    "auto_categorization": true
+  }
+}

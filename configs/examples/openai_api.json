@@ -1,0 +1,83 @@
+{
+  "name": "openai_api",
+  "description": "Complete OpenAI API reference for building AI applications. Use when working with GPT models, embeddings, fine-tuning, and AI integrations.",
+  "source_type": "api",
+  "template": "api_reference",
+  "source_config": {
+    "base_url": "https://api.openai.com",
+    "openapi_spec_url": "https://raw.githubusercontent.com/openai/openai-openapi/master/openapi.yaml",
+    "auth": {
+      "type": "bearer",
+      "token": "${OPENAI_API_KEY}"
+    },
+    "endpoints": [
+      {
+        "path": "/v1/chat/completions",
+        "method": "post",
+        "description": "Create a chat completion using GPT models",
+        "parameters": [
+          {
+            "name": "model",
+            "type": "string",
+            "required": true,
+            "description": "ID of the model to use (e.g., gpt-4, gpt-3.5-turbo)"
+          },
+          {
+            "name": "messages",
+            "type": "array",
+            "required": true,
+            "description": "A list of messages comprising the conversation"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "required": false,
+            "description": "Sampling temperature between 0 and 2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with chat completion"
+          },
+          "400": {
+            "description": "Bad request - invalid parameters"
+          },
+          "401": {
+            "description": "Unauthorized - invalid API key"
+          }
+        }
+      },
+      {
+        "path": "/v1/embeddings",
+        "method": "post",
+        "description": "Create embeddings for text input",
+        "parameters": [
+          {
+            "name": "model",
+            "type": "string",
+            "required": true,
+            "description": "ID of the embedding model (e.g., text-embedding-ada-002)"
+          },
+          {
+            "name": "input",
+            "type": "string",
+            "required": true,
+            "description": "Text to create embeddings for"
+          }
+        ]
+      }
+    ],
+    "examples_config": {
+      "example_sources": [
+        "https://platform.openai.com/examples",
+        "https://cookbook.openai.com"
+      ]
+    }
+  },
+  "processing_options": {
+    "max_content_items": 500,
+    "quality_threshold": 0.5,
+    "enable_ai_enhancement": true,
+    "auto_categorization": true
+  }
+}

@@ -7,8 +7,10 @@ import os
 import sys
 import subprocess
 import platform
+import logging
+import json
 from pathlib import Path
-from typing import Optional, Tuple, Dict, Union
+from typing import Optional, Tuple, Dict, Union, Any
 
 
 def open_folder(folder_path: Union[str, Path]) -> bool:
@@ -222,3 +224,41 @@ def read_reference_files(skill_dir: Union[str, Path], max_chars: int = 100000, p
             break
 
     return references
+
+
+def setup_logging(level: int = logging.INFO) -> None:
+    """Setup logging configuration for CLI tools.
+    
+    Args:
+        level: Logging level (default: INFO)
+    """
+    logging.basicConfig(
+        level=level,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+
+
+def create_directory(path: Union[str, Path]) -> Path:
+    """Create directory if it doesn't exist.
+    
+    Args:
+        path: Directory path to create
+        
+    Returns:
+        Path object for the created directory
+    """
+    path_obj = Path(path)
+    path_obj.mkdir(parents=True, exist_ok=True)
+    return path_obj
+
+
+def save_json(data: Any, filepath: Union[str, Path]) -> None:
+    """Save data to JSON file.
+    
+    Args:
+        data: Data to save
+        filepath: Output file path
+    """
+    with open(filepath, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)

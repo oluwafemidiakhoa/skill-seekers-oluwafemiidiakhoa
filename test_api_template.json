@@ -1,0 +1,24 @@
+{
+  "name": "",
+  "description": "",
+  "source_type": "api",
+  "template": "api_reference",
+  "source_config": {
+    "base_url": "https://api.example.com",
+    "openapi_spec_url": "https://api.example.com/openapi.json",
+    "auth": {
+      "type": "bearer",
+      "token": "${API_TOKEN}"
+    },
+    "endpoints": [],
+    "examples_config": {
+      "example_sources": []
+    }
+  },
+  "processing_options": {
+    "max_content_items": 1000,
+    "quality_threshold": 0.3,
+    "enable_ai_enhancement": true,
+    "auto_categorization": true
+  }
+}

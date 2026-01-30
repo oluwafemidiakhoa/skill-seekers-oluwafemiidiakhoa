@@ -120,6 +120,28 @@ For more information: https://github.com/yusufkaraaslan/Skill_Seekers
     unified_parser.add_argument("--merge-mode", help="Merge mode (rule-based, claude-enhanced)")
     unified_parser.add_argument("--dry-run", action="store_true", help="Dry run mode")
 
+    # === universal subcommand (NEW) ===
+    universal_parser = subparsers.add_parser(
+        "universal",
+        help="Universal content scraping (API, Video, Forum, etc.)",
+        description="Create skills from any content source type"
+    )
+    universal_parser.add_argument("--config", required=True, help="Universal config JSON file")
+    universal_parser.add_argument("--template", help="Override skill template")
+    universal_parser.add_argument("--max-items", type=int, help="Maximum content items to extract")
+    universal_parser.add_argument("--dry-run", action="store_true", help="Validate config only")
+    universal_parser.add_argument("--enhance", action="store_true", help="Enable AI enhancement")
+
+    # === create-template subcommand (NEW) ===
+    template_parser = subparsers.add_parser(
+        "create-template",
+        help="Create configuration template for new content types",
+        description="Generate template config files for different content sources"
+    )
+    template_parser.add_argument("content_type", help="Content type (api, video, forum, etc.)")
+    template_parser.add_argument("template", help="Skill template (api_reference, tutorial_series, etc.)")
+    template_parser.add_argument("output_file", help="Output configuration file path")
+
     # === enhance subcommand ===
     enhance_parser = subparsers.add_parser(
         "enhance",
@@ -239,6 +261,28 @@ def main(argv: Optional[List[str]] = None) -> int:
             if args.dry_run:
                 sys.argv.append("--dry-run")
             return unified_main() or 0
+
+        elif args.command == "universal":
+            from skill_seekers.cli.universal_scraper import main as universal_main
+            sys.argv = ["universal_scraper.py", "--config", args.config]
+            if args.template:
+                sys.argv.extend(["--template", args.template])
+            if args.max_items:
+                sys.argv.extend(["--max-items", str(args.max_items)])
+            if args.dry_run:
+                sys.argv.append("--dry-run")
+            if args.enhance:
+                sys.argv.append("--enhance")
+            return universal_main() or 0
+
+        elif args.command == "create-template":
+            from skill_seekers.cli.universal_scraper import create_config_template
+            try:
+                create_config_template(args.content_type, args.template, args.output_file)
+                return 0
+            except Exception as e:
+                print(f"Error creating template: {e}", file=sys.stderr)
+                return 1
 
         elif args.command == "enhance":
             from skill_seekers.cli.enhance_skill_local import main as enhance_main

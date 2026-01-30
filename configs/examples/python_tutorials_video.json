@@ -1,0 +1,37 @@
+{
+  "name": "python_tutorials",
+  "description": "Comprehensive Python learning path from video tutorials. Use when learning Python programming, from basics to advanced concepts.",
+  "source_type": "video",
+  "template": "tutorial_series",
+  "source_config": {
+    "video_urls": [
+      "https://www.youtube.com/watch?v=_uQrJ0TkZlc",
+      "https://www.youtube.com/watch?v=rfscVS0vtbw",
+      "https://www.youtube.com/watch?v=HGOBQPFzWKo",
+      "https://www.youtube.com/playlist?list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU"
+    ],
+    "extract_transcripts": true,
+    "extract_chapters": true,
+    "language": "en",
+    "quality_filter": {
+      "min_views": 10000,
+      "min_likes": 100,
+      "min_duration_seconds": 300
+    },
+    "content_categories": {
+      "basics": ["variables", "data types", "loops", "conditionals"],
+      "functions": ["def", "parameters", "return", "lambda"],
+      "oop": ["class", "inheritance", "polymorphism", "encapsulation"],
+      "libraries": ["pandas", "numpy", "requests", "matplotlib"],
+      "advanced": ["decorators", "generators", "async", "metaclasses"]
+    }
+  },
+  "processing_options": {
+    "max_content_items": 200,
+    "quality_threshold": 0.4,
+    "enable_ai_enhancement": true,
+    "auto_categorization": true,
+    "extract_code_examples": true,
+    "create_practice_exercises": true
+  }
+}
